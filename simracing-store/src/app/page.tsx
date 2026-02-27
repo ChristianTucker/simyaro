@@ -6,7 +6,6 @@ import {
   Phone,
   MapPin,
   Clock,
-  Cpu,
   Wrench,
 } from "lucide-react";
 import SpeedCanvas from "@/components/SpeedCanvas";
@@ -194,9 +193,15 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex items-center justify-center rounded-2xl border border-white/[0.06] bg-neutral-900 p-10"
+              className="flex items-center justify-center rounded-2xl border border-white/[0.06] bg-neutral-900 p-8"
             >
-              <Cpu size={120} strokeWidth={1} className="text-red-600/30" />
+              <Image
+                src="/images/gaming-pc.png"
+                alt="Сборка игрового ПК"
+                width={400}
+                height={400}
+                className="h-auto w-full max-w-[320px]"
+              />
             </motion.div>
           </div>
         </div>
