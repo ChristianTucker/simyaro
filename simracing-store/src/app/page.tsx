@@ -6,7 +6,6 @@ import {
   Phone,
   MapPin,
   Clock,
-  Wrench,
 } from "lucide-react";
 import SpeedCanvas from "@/components/SpeedCanvas";
 
@@ -163,29 +162,14 @@ export default function Home() {
               initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-5"
             >
-              <h2 className="text-xl font-black text-white sm:text-2xl">
-                Вам нужна <span className="text-grad-red">сборка ПК</span>?
-              </h2>
-              <p className="text-sm leading-relaxed text-neutral-400">
-                Мы можем подобрать любое решение как под симрейсинг, так и для обычного использования.
+              <p className="text-base leading-relaxed text-neutral-300 sm:text-lg">
+                Вам нужна сборка ПК ? Мы можем подобрать любое решение как под симрейсинг, так и для обычного использования.
               </p>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-red-600/30 bg-red-600/[0.06]">
-                  <Wrench size={18} className="text-red-500" />
-                </div>
-                <p className="text-sm leading-relaxed text-neutral-400">
-                  А может у Вас сломался компьютер — мы решим эту проблему
-                </p>
-              </div>
-              <a
-                href="tel:+79777220066"
-                className="mt-2 inline-flex w-fit items-center gap-2 rounded-xl racing-gradient px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-transform hover:scale-[1.03] active:scale-95 animate-glow"
-              >
-                <Phone size={14} />
-                Связаться с нами
-              </a>
+              <p className="text-base leading-relaxed text-neutral-300 sm:text-lg">
+                А может у Вас сломался компьютер - мы решим эту проблему
+              </p>
             </motion.div>
 
             <motion.div
