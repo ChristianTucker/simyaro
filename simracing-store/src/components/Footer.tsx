@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-neutral-500">
           <span className="flex items-center gap-1.5">
             <MapPin size={11} className="text-red-600" />
-            ТЦ «Lille», 1-е Успенское ш., пос. Новое Лапино, Московская обл.
+            ТЦ «Lille», 1-е Успенское ш., с25, д. Лапино
           </span>
           <a href="tel:+79777220066" className="flex items-center gap-1.5 transition-colors hover:text-red-500">
             <Phone size={11} className="text-red-600" />

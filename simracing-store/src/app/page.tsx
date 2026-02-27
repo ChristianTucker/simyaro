@@ -85,7 +85,7 @@ export default function Home() {
             </a>
             <span className="flex items-center gap-1.5 text-xs text-neutral-500">
               <MapPin size={12} className="text-red-600" />
-              ТЦ «Lille», 1-е Успенское ш., пос. Новое Лапино, Московская обл.
+              ТЦ «Lille», 1-е Успенское ш., с25, д. Лапино
             </span>
           </motion.div>
         </div>
@@ -217,7 +217,7 @@ export default function Home() {
 
               <div className="mb-5 space-y-2.5">
                 {[
-                  { icon: MapPin, text: "ТЦ «Lille», 1-е Успенское ш., пос. Новое Лапино, Московская обл.", sub: "Удобная парковка" },
+                  { icon: MapPin, text: "ТЦ «Lille», 1-е Успенское ш., с25, д. Лапино", sub: "Удобная парковка" },
                   { icon: Clock, text: "Пн–Вс: 10:00 – 21:00", sub: "Без выходных" },
                   { icon: Phone, text: "+7 977 722-00-66", sub: "Запись на тест-драйв", href: "tel:+79777220066" },
                 ].map((item) => (
