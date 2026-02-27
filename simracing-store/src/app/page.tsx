@@ -6,36 +6,24 @@ import {
   Phone,
   MapPin,
   Clock,
-  Monitor,
-  Headset,
-  MonitorPlay,
 } from "lucide-react";
 import SpeedCanvas from "@/components/SpeedCanvas";
 
 const solutions = [
   {
-    icon: Monitor,
     title: "Один монитор",
     desc: "Идеальный старт — качественный экран и вы уже на трассе.",
-    price: "от 30 000 ₽",
-    visual: 1,
     image: "/images/YARO_SINGLE.jpg",
   },
   {
-    icon: MonitorPlay,
     title: "Три монитора",
     desc: "180° обзор как в болиде F1. Золотой стандарт симрейсинга.",
-    price: "от 90 000 ₽",
-    visual: 3,
     featured: true,
     image: "/images/YARO_TRIPPLE.jpg",
   },
   {
-    icon: Headset,
     title: "VR шлем",
     desc: "Мы используем Pimax Crystal Light по умолчанию. Так же вы можете попробовать другие шлемы: Big Screen / Quest 3.",
-    price: "от 45 000 ₽",
-    visual: 0,
     image: "/images/YARO_VR.jpg",
   },
 ];
@@ -150,7 +138,6 @@ export default function Home() {
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-3">
                     <h3 className="text-base font-black text-white">{s.title}</h3>
-                    <p className="text-lg font-bold text-grad-red">{s.price}</p>
                   </div>
 
                   <p className="mb-3 text-sm leading-relaxed text-neutral-400">
