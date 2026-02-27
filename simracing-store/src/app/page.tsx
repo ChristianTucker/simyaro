@@ -19,6 +19,7 @@ const solutions = [
     desc: "Идеальный старт — качественный экран и вы уже на трассе.",
     price: "от 30 000 ₽",
     visual: 1,
+    image: "/images/YARO_SINGLE.jpg",
   },
   {
     icon: MonitorPlay,
@@ -27,14 +28,24 @@ const solutions = [
     price: "от 90 000 ₽",
     visual: 3,
     featured: true,
+    image: "/images/YARO_TRIPPLE.jpg",
   },
   {
     icon: Headset,
     title: "VR шлем",
-    desc: "Крутите головой — видите трассу. Максимальный эффект присутствия.",
+    desc: "Мы используем Pimax Crystal Light по умолчанию. Так же вы можете попробовать другие шлемы: Big Screen / Quest 3.",
     price: "от 45 000 ₽",
     visual: 0,
+    image: "/images/YARO_VR.jpg",
   },
+];
+
+const simulators = [
+  { name: "iRacing", url: "https://www.iracing.com/" },
+  { name: "Assetto Corsa", url: "https://store.steampowered.com/app/244210/Assetto_Corsa/" },
+  { name: "Assetto Corsa Competizione", url: "https://store.steampowered.com/app/805550/Assetto_Corsa_Competizione/" },
+  { name: "Assetto Corsa EVO", url: "https://store.steampowered.com/app/3058630/Assetto_Corsa_EVO/" },
+  { name: "Automobilista 2", url: "https://store.steampowered.com/app/1066890/Automobilista_2/" },
 ];
 
 export default function Home() {
@@ -86,7 +97,7 @@ export default function Home() {
             </a>
             <span className="flex items-center gap-1.5 text-xs text-neutral-500">
               <MapPin size={12} className="text-red-600" />
-              ТЦ «Lille», 1 этаж
+              ТЦ «Lille», 1-е Успенское ш., пос. Новое Лапино
             </span>
           </motion.div>
         </div>
@@ -126,35 +137,20 @@ export default function Home() {
                   <div className="absolute inset-x-0 top-0 h-[2px] racing-gradient" />
                 )}
 
+                {/* Product image */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-800">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
                 <div className="flex flex-1 flex-col p-5">
-                  {/* Visual + title row */}
-                  <div className="mb-3 flex items-center gap-3">
-                    {s.visual === 0 ? (
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-red-600/30 bg-red-600/[0.06]">
-                        <Headset size={20} className="text-red-500" />
-                      </div>
-                    ) : (
-                      <div className="flex h-11 shrink-0 items-end gap-0.5 px-1">
-                        {Array.from({ length: s.visual }).map((_, mi) => (
-                          <div
-                            key={mi}
-                            className={`rounded-sm border border-red-600/30 bg-red-600/[0.06] transition-colors group-hover:border-red-600/60 ${
-                              s.visual === 1 ? "h-8 w-10" : "h-7 w-[14px]"
-                            } ${
-                              s.visual === 3 && mi === 0
-                                ? "-rotate-[12deg]"
-                                : s.visual === 3 && mi === 2
-                                  ? "rotate-[12deg]"
-                                  : ""
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    )}
-                    <div>
-                      <h3 className="text-base font-black text-white">{s.title}</h3>
-                      <p className="text-lg font-bold text-grad-red">{s.price}</p>
-                    </div>
+                  <div className="mb-3">
+                    <h3 className="text-base font-black text-white">{s.title}</h3>
+                    <p className="text-lg font-bold text-grad-red">{s.price}</p>
                   </div>
 
                   <p className="mb-3 text-sm leading-relaxed text-neutral-400">
@@ -197,7 +193,7 @@ export default function Home() {
 
               <div className="mb-5 space-y-2.5">
                 {[
-                  { icon: MapPin, text: "ТЦ «Lille», 1 этаж", sub: "Удобная парковка" },
+                  { icon: MapPin, text: "ТЦ «Lille», 1-е Успенское ш., пос. Новое Лапино, Московская обл.", sub: "Удобная парковка" },
                   { icon: Clock, text: "Пн–Вс: 10:00 – 21:00", sub: "Без выходных" },
                   { icon: Phone, text: "+7 977 722-00-66", sub: "Запись на тест-драйв", href: "tel:+79777220066" },
                 ].map((item) => (
@@ -241,6 +237,39 @@ export default function Home() {
                 className="h-auto w-full"
               />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SIMULATORS WE USE ── */}
+      <section className="border-t border-white/[0.04] bg-neutral-950 py-10 sm:py-14">
+        <div className="mx-auto max-w-6xl section-padding text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-6 text-xl font-black text-white sm:text-2xl"
+          >
+            Симуляторы которые мы используем
+          </motion.h2>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {simulators.map((sim, i) => (
+              <motion.a
+                key={sim.name}
+                href={sim.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                whileHover={{ scale: 1.05 }}
+                className="rounded-xl border border-white/[0.06] bg-neutral-900 px-5 py-3 text-sm font-bold text-neutral-300 transition-colors hover:border-red-600/40 hover:text-white"
+              >
+                {sim.name}
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
